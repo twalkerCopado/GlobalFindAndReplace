@@ -1,0 +1,12 @@
+regex_lib:
+    apiVersion-tag: '(?s)(\n\s*<apiVersion>___REPLACEVALUE___</apiVersion>)'
+
+rules:
+    change_api_tag_to_current_version:
+        extensions:
+            - xml
+        regex_name: 'apiVersion-tag' 
+        replace_values:
+            - 48.0
+        branches:
+        replace_with: '<apiVersion>47.0</apiVersion>'
