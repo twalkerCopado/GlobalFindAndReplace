@@ -1,0 +1,23 @@
+regex_lib:
+    apiVersion-tag: '(?s)(\n\s*<apiVersion>___REPLACEVALUE___</apiVersion>)'
+    user-permission: '(?s)(\n\s*<userPermissions>(?:(?!<userPermissions>).)*?<name>___REPLACEVALUE___</name>(?:(?!<userPermissions>).)*?</userPermissions>)'
+
+rules:
+    change_api_tag_to_current_version:
+        extensions:
+            - xml
+        regex_name: 'apiVersion-tag' 
+        replace_values:
+            - 48.0
+        branches:
+        replace_with: '<apiVersion>47.0</apiVersion>'
+        
+    invalid_user_permissions: 
+        extensions: # if you want to apply the rule to types of files, list the file extension names here.
+            - profile
+            - permissionset
+        regex_name: 'user-permission' 
+        replace_values: 
+            - ManageCMS
+        branches:
+        replace_with:
