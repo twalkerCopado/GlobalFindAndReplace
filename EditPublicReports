@@ -12,5 +12,6 @@ rules:
         regex_name: 'user-permission' 
         replace_values: 
             - EditPublicReports
+            - EditReports
         branches:
         replace_with:
