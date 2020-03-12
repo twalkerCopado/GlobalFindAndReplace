@@ -13,5 +13,6 @@ rules:
         replace_values: 
             - EditPublicReports
             - EditReports
+            - ManageDashboards
         branches:
         replace_with:
