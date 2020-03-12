@@ -1,0 +1,16 @@
+regex_lib:
+    user-permission: '(?s)(\n\s*<userPermissions>(?:(?!<userPermissions>).)*?<name>___REPLACEVALUE___</name>(?:(?!<userPermissions>).)*?</userPermissions>)'
+
+rules:
+    ### Example for removing specific references on specific files
+    ## Use Case: Delete Jigsaw and SicDesc fields in Account, Contact and Lead objects
+    # choose a rule name without spaces or special characters. This is the same for all rules
+    invalid_user_permissions: 
+        extensions: # if you want to apply the rule to types of files, list the file extension names here.
+            - profile
+            - permissionset
+        regex_name: 'user-permission' 
+        replace_values: 
+            - EditPublicReports
+        branches:
+        replace_with:
