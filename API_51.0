@@ -7,6 +7,6 @@ rules:
             - xml
         regex_name: 'apiVersion-tag' 
         replace_values:
-            - 50.0
+            - 51.0
         branches:
-        replace_with: '<apiVersion>49.0</apiVersion>'
+        replace_with: '<apiVersion>50.0</apiVersion>'
